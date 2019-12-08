@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node index"
   },
+  "files": ["templates"],
   "keywords": [],
   "author": "Vitor Barbosa",
   "license": "ISC"

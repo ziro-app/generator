@@ -61,6 +61,16 @@ module.exports = plop => {
 				path: 'src/templates/main.js',
 				templateFile: 'node_modules/@ziro/generator/templates/src/templates/main.js'
 			},
+			{
+				type: 'add',
+				path: 'src/templates/request.js',
+				templateFile: 'node_modules/@ziro/generator/templates/src/templates/request.js'
+			},
+			{
+				type: 'add',
+				path: 'src/lambdas/lambda.js',
+				templateFile: 'node_modules/@ziro/generator/templates/src/lambdas/lambda.js'
+			}
 		]
 	})
 }

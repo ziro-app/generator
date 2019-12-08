@@ -21,7 +21,7 @@ module.exports = plop => {
 			{
 				type: 'add',
 				path: '.gitignore',
-				templateFile: 'node_modules/@ziro/generator/templates/.gitignore'
+				templateFile: 'node_modules/@ziro/generator/templates/.##gitignore##'
 			}
 		]
 	})

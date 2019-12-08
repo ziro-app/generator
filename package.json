@@ -1,12 +1,14 @@
 {
   "name": "@ziro/generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "plopfile.js",
   "scripts": {
     "start": "node index"
   },
-  "files": ["templates"],
+  "files": [
+    "templates"
+  ],
   "keywords": [],
   "author": "Vitor Barbosa",
   "license": "ISC"

@@ -56,6 +56,11 @@ module.exports = plop => {
 				path: 'webpack.functions.js',
 				templateFile: 'node_modules/@ziro/generator/templates/webpack.functions.js'
 			},
+			{
+				type: 'add',
+				path: 'src/templates/main.js',
+				templateFile: 'node_modules/@ziro/generator/templates/src/templates/main.js'
+			},
 		]
 	})
 }

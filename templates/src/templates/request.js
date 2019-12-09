@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-module.exports.request = async () => {
+const request = async () => {
 	const config = {}
 	try {
 		const { data } = await axios(config)
@@ -21,3 +21,5 @@ module.exports.request = async () => {
 		}
 	}
 }
+
+module.exports = request

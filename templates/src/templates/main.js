@@ -8,7 +8,7 @@ const { errorHandler } = require('@ziro/middleware')
 const { cors } = require('@ziro/middleware')
 const allowed = 'https://ziro.app'
 
-module.exports = handler =>
+module.exports.main = handler =>
 	middy(handler)
 	.use(preflight)
 	.use(allowedOrigin(allowed))

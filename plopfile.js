@@ -38,6 +38,11 @@ module.exports = plop => {
 		actions: [
 			{
 				type: 'add',
+				path: '.env',
+				templateFile: 'node_modules/@ziro/generator/templates/.env'
+			},
+			{
+				type: 'add',
 				path: '.gitignore',
 				templateFile: 'node_modules/@ziro/generator/templates/.##gitignore##'
 			},

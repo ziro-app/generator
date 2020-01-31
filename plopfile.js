@@ -1,5 +1,5 @@
 module.exports = plop => {
-	plop.setGenerator('generator-react-firebase', {
+	plop.setGenerator('react-firebase', {
 		description: 'Generator for apps that use React and Firebase',
 		prompts: [
 			{
@@ -37,7 +37,7 @@ module.exports = plop => {
 		],
 		actions: []
 	})
-	plop.setGenerator('generator-lambda-netlify', {
+	plop.setGenerator('lambda-netlify', {
 		description: 'Generator for lambda functions deployed to Netlify',
 		prompts: [
 			{
@@ -77,42 +77,42 @@ module.exports = plop => {
 			{
 				type: 'add',
 				path: '.env',
-				templateFile: 'node_modules/@ziro/generator/templates/.env'
+				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/.env'
 			},
 			{
 				type: 'add',
 				path: '.gitignore',
-				templateFile: 'node_modules/@ziro/generator/templates/.##gitignore##'
+				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/.##gitignore##'
 			},
 			{
 				type: 'add',
 				path: 'netlify.toml',
-				templateFile: 'node_modules/@ziro/generator/templates/netlify.toml'
+				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/netlify.toml'
 			},
 			{
 				type: 'add',
 				path: 'package.json',
-				templateFile: 'node_modules/@ziro/generator/templates/package.json'
+				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/package.json'
 			},
 			{
 				type: 'add',
 				path: 'webpack.functions.js',
-				templateFile: 'node_modules/@ziro/generator/templates/webpack.functions.js'
+				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/webpack.functions.js'
 			},
 			{
 				type: 'add',
 				path: 'src/templates/main.js',
-				templateFile: 'node_modules/@ziro/generator/templates/src/templates/main.js'
+				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/src/templates/main.js'
 			},
 			{
 				type: 'add',
 				path: 'src/templates/request.js',
-				templateFile: 'node_modules/@ziro/generator/templates/src/templates/request.js'
+				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/src/templates/request.js'
 			},
 			{
 				type: 'add',
 				path: 'src/lambdas/lambda.js',
-				templateFile: 'node_modules/@ziro/generator/templates/src/lambdas/lambda.js'
+				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/src/lambdas/lambda.js'
 			}
 		]
 	})

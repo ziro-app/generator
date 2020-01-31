@@ -1,6 +1,44 @@
 module.exports = plop => {
+	plop.setGenerator('generator-react-firebase', {
+		description: 'Generator for apps that use React and Firebase',
+		prompts: [
+			{
+				type: 'input',
+				name: 'name',
+				message: 'Give a name for the project. Will be used in package.json',
+				validate: input => {
+					if (/.+/.test(input)) return true
+					return 'Name is required'
+				}
+			},
+			{
+				type: 'input',
+				name: 'description',
+				message: 'Give a description for the project. Will be used in package.json',
+			},
+			{
+				type: 'input',
+				name: 'repository',
+				message: 'Paste the github repository link. Will be used in package.json',
+				validate: input => {
+					if (/.+/.test(input)) return true
+					return 'Repository is required'
+				}
+			},
+			{
+				type: 'input',
+				name: 'author',
+				message: 'Name the author of the project. Will be used in package.json',
+				validate: input => {
+					if (/.+/.test(input)) return true
+					return 'Author is required'
+				}
+			}
+		],
+		actions: []
+	})
 	plop.setGenerator('generator-lambda-netlify', {
-		description: 'Plop generator for lambda functions deployed to Netlify',
+		description: 'Generator for lambda functions deployed to Netlify',
 		prompts: [
 			{
 				type: 'input',

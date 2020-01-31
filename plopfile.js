@@ -35,7 +35,168 @@ module.exports = plop => {
 				}
 			}
 		],
-		actions: []
+		actions: [
+			{
+				type: 'add',
+				path: '.gitignore',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/.##gitignore##'
+			},
+			{
+				type: 'add',
+				path: '.npmrc',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/.npmrc'
+			},
+			{
+				type: 'add',
+				path: '_redirects',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/_redirects'
+			},
+			{
+				type: 'add',
+				path: 'credentials.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/credentials.js'
+			},
+			{
+				type: 'add',
+				path: 'logo.png',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/logo.png'
+			},
+			{
+				type: 'add',
+				path: 'package.json',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/package.json'
+			},
+			{
+				type: 'add',
+				path: 'webpack.config.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/webpack.config.js'
+			},
+			{
+				type: 'add',
+				path: 'src/index.css',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/index.css'
+			},
+			{
+				type: 'add',
+				path: 'src/index.html',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/index.html'
+			},
+			{
+				type: 'add',
+				path: 'src/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/sw.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/sw.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/appContext.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/appContext.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/Router.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/Router.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/DeleteAccount/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/DeleteAccount/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/DeleteAccount/sendToBackend.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/DeleteAccount/sendToBackend.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/Login/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/Login/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/Login/sendToBackend.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/Login/sendToBackend.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/Menu/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/Menu/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/Register/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/Register/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/Register/sendToBackend.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/Register/sendToBackend.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/Register/styles.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/Register/styles.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/ResendEmail/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/ResendEmail/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/ResendEmail/sendToBackend.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/ResendEmail/sendToBackend.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/ResetPass/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/ResetPass/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/ResetPass/sendToBackend.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/ResetPass/sendToBackend.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/UpdateEmail/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/UpdateEmail/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/UpdateEmail/sendToBackend.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/UpdateEmail/sendToBackend.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/UpdatePass/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/UpdatePass/index.js'
+			},
+			{
+				type: 'add',
+				path: 'src/App/UpdatePass/sendToBackend.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/App/UpdatePass/sendToBackend.js'
+			},
+			{
+				type: 'add',
+				path: 'src/Firebase/firebase-config.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/Firebase/firebase-config.js'
+			},
+			{
+				type: 'add',
+				path: 'src/Firebase/index.js',
+				templateFile: 'node_modules/@ziro/generator/templates/react-firebase/src/Firebase/index.js'
+			}
+		]
 	})
 	plop.setGenerator('lambda-netlify', {
 		description: 'Generator for lambda functions deployed to Netlify',

@@ -7,12 +7,12 @@
 npm i -g plop
 ```
 ## Usage
-On a blank project folder (it **must** be blank), follow the steps below:
+On a *blank* project folder (it ***must*** be blank), follow the steps below:
 - Install the generator
 ```
 npm i @ziro/generator
 ```
-- Create a plopfile.js in the root of your project requiring the generator. The file should contain only the following content:
+- Create a plopfile.js in the root of your project requiring the generator. The file should contain ***only*** the following content:
 ``` javascript
 module.exports = require('@ziro/generator')
 ```

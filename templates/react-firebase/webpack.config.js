@@ -56,8 +56,8 @@ module.exports = (env, { mode }) => {
 				{ from: './src/sw.js', to: 'sw.js', toType: 'file' }
 			]),
 			new WebpackPwaManifest({
-				name: '{{ manifest_name }}',
-				short_name: '{{ manifest_short_name }}',
+				name: '{{ name }}',
+				short_name: '{{ name }}',
 				start_url: '/',
 				background_color: '#FFF',
 				theme_color: '#FFF',

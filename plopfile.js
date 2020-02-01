@@ -5,7 +5,7 @@ module.exports = plop => {
 			{
 				type: 'input',
 				name: 'name',
-				message: 'Give a name for the project. Will be used in package.json',
+				message: `Give a name for the project. Will be used in package.json and in webpack.config.js. Will be the name of the icon that appears on the user's phone home screen`,
 				validate: input => {
 					if (/.+/.test(input)) return true
 					return 'Name is required'
@@ -32,24 +32,6 @@ module.exports = plop => {
 				validate: input => {
 					if (/.+/.test(input)) return true
 					return 'Author is required'
-				}
-			},
-			{
-				type: 'input',
-				name: 'manifest_name',
-				message: 'Name the project. Will be used for manifest in webpack.config.js',
-				validate: input => {
-					if (/.+/.test(input)) return true
-					return 'Manifest name is required'
-				}
-			},
-			{
-				type: 'input',
-				name: 'manifest_short_name',
-				message: 'Give a short name for the project. Will be used for manifest in webpack.config.js',
-				validate: input => {
-					if (/.+/.test(input)) return true
-					return 'Manifest short name is required'
 				}
 			}
 		],

@@ -5,7 +5,7 @@ import { containerWithPadding } from '@ziro/theme'
 
 const Login = () =>
 	<div style={containerWithPadding}>
-		<LoginPage audience='Afiliado' sendToBackend={sendToBackend} />
+		<LoginPage audience='<INSIRA UM NOME>' sendToBackend={sendToBackend} />
 	</div>
 
 export default Login

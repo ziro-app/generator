@@ -10,7 +10,7 @@ import { containerWithPadding } from '@ziro/theme'
 import { welcome, marker } from './styles'
 
 const Register = () => {
-	const [isLoading, setIsLoading] = useState(true)
+	const [isLoading, setIsLoading] = useState(false)
 	const [isError, setIsError] = useState(false)
 	// form fields
 	const [email, setEmail] = useState('')

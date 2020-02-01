@@ -8,9 +8,7 @@ import ResendEmail from './ResendEmail/index'
 import ResetPass from './ResetPass/index'
 import ConfirmEmail from '@bit/vitorbarbosa19.ziro.confirm-email'
 import { Menu } from './Menu/index'
-import ReferClient from './ReferClient/index'
 import MyAccount from '@bit/vitorbarbosa19.ziro.my-account'
-import About from '@bit/vitorbarbosa19.ziro.about'
 import UpdateEmail from './UpdateEmail/index'
 import UpdatePass from './UpdatePass/index'
 import DeleteAccount from './DeleteAccount/index'
@@ -26,14 +24,12 @@ const Router = ({ isLogged }) => {
 		'/confirmar-email': <ConfirmEmail />
 	}
 	const privateRoutes = { // Menu can't be put inside the components because then it'll unmount on transition
-		'/indicar': <Menu title='Indicar Lojista'><ReferClient /></Menu>,
 		'/conta': <Menu title='Minha Conta'><MyAccount /></Menu>,
-		'/ziro': <Menu title='Sobre a Ziro'><About /></Menu>,
 		'/trocar-email': <UpdateEmail />,
 		'/trocar-senha': <UpdatePass />,
 		'/deletar-conta': <DeleteAccount />
 	}
-	const homeRoute = '/indicar'
+	const homeRoute = '/conta'
 	return routeMatcher(isLogged, publicRoutes, privateRoutes, homeRoute, <NotFound fallback='/' />)
 }
 

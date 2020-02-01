@@ -33,6 +33,24 @@ module.exports = plop => {
 					if (/.+/.test(input)) return true
 					return 'Author is required'
 				}
+			},
+			{
+				type: 'input',
+				name: 'manifest_name',
+				message: 'Name the project. Will be used for manifest in webpack.config.js',
+				validate: input => {
+					if (/.+/.test(input)) return true
+					return 'Manifest name is required'
+				}
+			},
+			{
+				type: 'input',
+				name: 'manifest_short_name',
+				message: 'Give a short name for the project. Will be used for manifest in webpack.config.js',
+				validate: input => {
+					if (/.+/.test(input)) return true
+					return 'Manifest short name is required'
+				}
 			}
 		],
 		actions: [

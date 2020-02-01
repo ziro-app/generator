@@ -10,31 +10,19 @@ import { containerWithPadding } from '@ziro/theme'
 
 export const Menu = ({ title, children }) => {
 	const [isOpen, setIsOpen] = useState(false)
-	const { name, cpf } = useContext(userContext)
+	const { name } = useContext(userContext)
 	return (
 		<div style={containerWithPadding}>
 			<Header type='icon' title={title} icon='menu' setIsOpen={() => setIsOpen(true)} />
 			<Drawer isOpen={isOpen} setIsOpen={() => setIsOpen(false)}>
 				<DrawerPanel
 					username={name || 'Usuário'}
-					userdata={`CPF: ${cpf || '-'}`}
+					userdata={''}
 					options={[
-						{ path: '/indicar',
-						  onClick: () => setIsOpen(false),
-						  icon: <Icon type='money' size={15} strokeWidth={2} />,
-						  text: 'Indicar Lojista' },
 						{ path: '/conta',
 						  onClick: () => setIsOpen(false),
 						  icon: <Icon type='gear' size={15} strokeWidth={2} />,
 						  text: 'Minha Conta' },
-						{ path: '#',
-						  onClick: () => window.open('https://parceria.ziro.app', '_blank'),
-						  icon: <Icon type='trending' size={15} strokeWidth={3} />,
-						  text: 'Saiba mais' },
-						{ path: '/ziro',
-						  onClick: () => setIsOpen(false),
-						  icon: <Icon type='location' size={15} strokeWidth={3} />,
-						  text: 'Sobre a Ziro' },
 						{ path: '#',
 						  onClick: () => auth.signOut(),
 						  icon: <Icon type='logout' size={15} strokeWidth={3} />,

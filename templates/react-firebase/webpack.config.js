@@ -29,14 +29,20 @@ module.exports = (env, { mode }) => {
 	}
 	if (mode === 'development') {
 		const {
-			api_key
+			sheet_url,
+			sheet_token,
+			sheet_id,
+			continue_url
 		} = require('./credentials')
 		config.devtool = 'cheap-module-eval-source-map'
 		config.devServer = { historyApiFallback: true }
 		config.plugins.push(
 			new webpack.DefinePlugin({
 				'process.env': {
-					API_KEY: JSON.stringify(api_key)
+					SHEET_URL: JSON.stringify(sheet_url),
+					SHEET_TOKEN: JSON.stringify(sheet_token),
+					SHEET_ID: JSON.stringify(sheet_id),
+					CONTINUE_URL: JSON.stringify(continue_url)
 				}
 			})
 		)
@@ -60,7 +66,10 @@ module.exports = (env, { mode }) => {
 			}),
 			new webpack.DefinePlugin({
 				'process.env': {
-					API_KEY: JSON.stringify(process.env.API_KEY)
+					SHEET_URL: JSON.stringify(process.env.SHEET_URL),
+					SHEET_TOKEN: JSON.stringify(process.env.SHEET_TOKEN),
+					SHEET_ID: JSON.stringify(process.env.SHEET_ID),
+					CONTINUE_URL: JSON.stringify(process.env.CONTINUE_URL)
 				}
 			})
 		)

@@ -7,10 +7,10 @@ const sendToBackend = state => () => new Promise(async (resolve, reject) => {
 		const credential = fbauth.EmailAuthProvider.credential(user.email, pass)
 		await user.reauthenticateWithCredential(credential)
 		try {
-			const snapshot = await db.collection('affiliates').where('uid','==',user.uid).get()
+			const snapshot = await db.collection('').where('uid','==',user.uid).get()
 			if (!snapshot.empty) {
 				snapshot.forEach(async doc => {
-					const userData = await db.collection('affiliates').doc(doc.id)
+					const userData = await db.collection('').doc(doc.id)
 					await userData.delete()
 				})
 			} else throw 'User not found in Firestore'

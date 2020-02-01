@@ -10,6 +10,7 @@ export const App = () => {
 	const [loading, setLoading] = useState(true)
 	const [errorLoading, setErrorLoading] = useState(false)
 	const [uid, setUid] = useState(null)
+	const [name, setName] = useState(null)
 	useEffect(() => {
 		return auth.onAuthStateChanged(async user => {
 			if (user && user.emailVerified) setUid(user.uid)
@@ -25,7 +26,6 @@ export const App = () => {
 					// 	docRef.forEach(doc => {
 					// 		const data = doc.data()
 					// 		setName(`${data.fname} ${data.lname}`)
-					// 		setCpf(data.cpf)
 					// 	})
 					// } else setErrorLoading(true)
 				} catch (error) {

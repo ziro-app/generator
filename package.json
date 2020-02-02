@@ -13,6 +13,6 @@
   "author": "Vitor Barbosa",
   "license": "ISC",
   "bin": {
-    "ziro-generator": "./plopfile.js"
+    "generator": "./generator.js"
   }
 }

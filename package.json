@@ -12,7 +12,5 @@
   "keywords": [],
   "author": "Vitor Barbosa",
   "license": "ISC",
-  "bin": {
-    "generator": "./generator.js"
-  }
+  "bin": "./generator.js"
 }

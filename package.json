@@ -1,6 +1,6 @@
 {
   "name": "@ziro/generator",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Improve code productivity by using template generators",
   "main": "plopfile.js",
   "keywords": [],

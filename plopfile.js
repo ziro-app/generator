@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 module.exports = plop => {
 	plop.setGenerator('react-firebase', {
 		description: 'Generator for apps that use React and Firebase',

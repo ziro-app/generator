@@ -1,6 +1,4 @@
-#!/usr/bin/env node
-
-const generator = plop => {
+module.exports = plop => {
 	plop.setGenerator('react-firebase', {
 		description: 'Generator for apps that use React and Firebase',
 		prompts: [
@@ -280,5 +278,3 @@ const generator = plop => {
 		]
 	})
 }
-
-generator()

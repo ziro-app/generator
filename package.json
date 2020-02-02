@@ -1,14 +1,8 @@
 {
   "name": "@ziro/generator",
   "version": "1.0.12",
-  "description": "",
+  "description": "Improve code productivity by using template generators",
   "main": "plopfile.js",
-  "scripts": {
-    "generator": "node generator"
-  },
-  "files": [
-    "templates"
-  ],
   "keywords": [],
   "author": "Vitor Barbosa",
   "license": "ISC",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const plopFileContent = `"module.exports = plop => {
+const plopFileContent = "module.exports = plop => {
 	plop.setGenerator('react-firebase', {
 		description: 'Generator for apps that use React and Firebase',
 		prompts: [
@@ -279,9 +279,11 @@ const plopFileContent = `"module.exports = plop => {
 			}
 		]
 	})
-}"`
+}"
+
+const fs = require('fs')
+fs.writeFyleSync('plopfile.js', plopFileContent)
 
 const { spawn } = require('child_process')
 const spawnOptions = { shell: true, stdio: 'inherit' }
-spawn('echo', [plopFileContent, '>', 'plopfile.js'], spawnOptions)
 spawn('plop', spawnOptions)

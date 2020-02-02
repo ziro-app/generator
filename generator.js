@@ -285,6 +285,7 @@ const plopFileContent = `module.exports = plop => {
 const fs = require('fs')
 fs.writeFileSync('plopfile.js', plopFileContent)
 
-// use spawn to invoke plop terminal command
+// use spawn to invoke terminal commands
 const { spawn } = require('child_process')
+spawn('npm', ['i', '@ziro/generator'], { shell: true, stdio: 'inherit' })
 spawn('plop', { shell: true, stdio: 'inherit' })

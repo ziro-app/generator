@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-const exec = require('child_process').exec
+const exec = require('shelljs').exec
 exec('plop')

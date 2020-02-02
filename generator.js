@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
-require('./plopfile.js')
 const { spawn } = require('child_process')
-spawn('plop', { shell: true, stdio: 'inherit' })
+const spawnOptions = { shell: true, stdio: 'inherit' }
+spawn('echo', [`"module.exports = require('@ziro/generator')"`, '>', 'plopfile.js'], spawnOptions)
+spawn('plop', spawnOptions)

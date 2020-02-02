@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 
-const plopFileContent = "module.exports = plop => {
+const plopFileContent = `module.exports = plop => {
 	plop.setGenerator('react-firebase', {
 		description: 'Generator for apps that use React and Firebase',
 		prompts: [
 			{
 				type: 'input',
 				name: 'name',
-				message: `Give a name for the project. Will be used in package.json and in webpack.config.js. Will be the name of the icon that appears on the user's phone home screen`,
+				message: "Give a name for the project. Will be used in package.json and in webpack.config.js. Will be the name of the icon that appears on the user's phone home screen",
 				validate: input => {
 					if (/.+/.test(input)) return true
 					return 'Name is required'
@@ -279,11 +279,12 @@ const plopFileContent = "module.exports = plop => {
 			}
 		]
 	})
-}"
+}`
 
+// write plopfile.js to directory
 const fs = require('fs')
-fs.writeFyleSync('plopfile.js', plopFileContent)
+fs.writeFileSync('plopfile.js', plopFileContent)
 
+// use spawn to invoke plop terminal command
 const { spawn } = require('child_process')
-const spawnOptions = { shell: true, stdio: 'inherit' }
-spawn('plop', spawnOptions)
+spawn('plop', { shell: true, stdio: 'inherit' })

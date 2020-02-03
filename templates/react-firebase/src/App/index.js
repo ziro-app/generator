@@ -21,13 +21,13 @@ export const App = () => {
 		const getUserData = async () => {
 			if (uid) {
 				try {
-					// const docRef = await db.collection('affiliates').where('uid','==',uid).get()	
+					// const docRef = await db.collection('').where('uid','==',uid).get()	
 					// if (!docRef.empty) {
 					// 	docRef.forEach(doc => {
 					// 		const data = doc.data()
 					// 		setName(`${data.fname} ${data.lname}`)
 					// 	})
-					// } else setErrorLoading(true)
+					// }
 				} catch (error) {
 					if (error.response) console.log(error.response)
 					else console.log(error)

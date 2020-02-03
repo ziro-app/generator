@@ -1,28 +1,34 @@
-import { auth } from '../../Firebase/index'
+import { db, auth } from '../../Firebase/index'
 
-const sendToBackend = state => () => {
-	const { email, pass } = state
-	return new Promise(async (resolve, reject) => {
+const sendToBackend = state => () => new Promise(async (resolve, reject) => {
+	try {
+		const { email, pass } = state
+		const snapshot = await db.collection('users').where('email','==',email).get()
+		let userApp
+		snapshot.forEach(doc => userApp = doc.data().app)
+		if (!(userApp === '' || userApp === 'admin')) throw { msg: 'Não cadastrado no app', customError: true }
 		try {
 			const { user: { emailVerified } } = await auth.signInWithEmailAndPassword(email, pass)
 			if (!emailVerified) {
 				await auth.signOut()
-				reject({ msg: 'Acesse o email de confirmação', customError: true })
+				throw { msg: 'Acesse o email de confirmação', customError: true }
 			}
 		} catch (error) {
-			console.log(error)
 			if (error.code) {
 				switch (error.code) {
-					case 'auth/network-request-failed': reject({ msg: 'Sem conexão com a rede', customError: true })
-					case 'auth/invalid-email': reject({ msg: 'Email inválido', customError: true })
-					case 'auth/user-disabled': reject({ msg: 'Usuário bloqueado', customError: true })
-					case 'auth/user-not-found': reject({ msg: 'Usuário não cadastrado', customError: true })
-					case 'auth/wrong-password': reject({ msg: 'Senha incorreta', customError: true })
-					case 'auth/too-many-requests': reject({ msg: 'Muitas tentativas. Tente mais tarde', customError: true })
+					case 'auth/network-request-failed': throw { msg: 'Sem conexão com a rede', customError: true }
+					case 'auth/invalid-email': throw { msg: 'Email inválido', customError: true }
+					case 'auth/user-disabled': throw { msg: 'Usuário bloqueado', customError: true }
+					case 'auth/user-not-found': throw { msg: 'Usuário não cadastrado', customError: true }
+					case 'auth/wrong-password': throw { msg: 'Senha incorreta', customError: true }
+					case 'auth/too-many-requests': throw { msg: 'Muitas tentativas. Tente mais tarde', customError: true }
 				}
-			}
+			} else throw error
 		}
-	})
-}
+	} catch (error) {
+		if (error.response) console.log(error.response)
+		reject(error)
+	}
+})
 
 export default sendToBackend

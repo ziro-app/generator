@@ -2,16 +2,20 @@ import { auth, db } from '../../Firebase/index'
 import { post } from 'axios'
 
 const sendToBackend = state => () => {
-	const { email, pass } = state
+	const { brand, branch, insta, fname, lname, cpf, whats, email, pass } = state
+	const branchTrim = branch ? branch.trim() : ''
+	const instaTrim = insta ? insta.replace('@','').trim().toLowerCase() : ''
+	const fnameTrim = fname ? fname.trim() : ''
+	const lnameTrim = lname ? lname.trim() : ''
 	const url = process.env.SHEET_URL
 	const body = {
 		apiResource: 'values',
 		apiMethod: 'append',
-		spreadsheetId: process.env.SHEET_ID,
-		range: '',
+		spreadsheetId: process.env.SHEET_ID_REGISTER_APPEND,
+		range: 'Afiliados!A1',
 		resource: {
 			values: [
-				[new Date(), email]
+				[new Date(), cpf, fnameTrim, lnameTrim, whats, email, brand, branchTrim, instaTrim]
 			]
 		},
 		valueInputOption: 'raw'
@@ -31,8 +35,10 @@ const sendToBackend = state => () => {
 					await auth.currentUser.sendEmailVerification({ url: `${process.env.CONTINUE_URL}` })
 					try {
 						await db.collection('').add({
-							email
+							cadastro: new Date(), uid: user.uid, brand, branch: branchTrim, insta: instaTrim,
+							fname: fnameTrim, lname: lnameTrim, cpf, whats, email
 						})
+						await db.collection('users').add({ email, app: '' })
 						try {
 							await auth.signOut() // user needs to validate email before signing in to app
 						} catch (error) {

@@ -1,10 +1,10 @@
 const main = require('../templates/main')
 const request = require('../templates/request')
 
-// Descrever objetivo do endpoint
+// Mudar o nome lambda para o nome da sua funcao
 
-const lambda = (event, context, callback) => {
+const lambda = async event => {
 	return request()
 }
 
-exports.handler = main(lambda)
+module.exports = { main(lambda) }

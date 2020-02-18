@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const request = async () => {
-	const config = {}
+	const config = {/* add config here */}
 	try {
 		const { data } = await axios(config)
 		return {
@@ -11,7 +11,7 @@ const request = async () => {
 	} catch (error) {
 		if (error.response && error.response.data && error.response.data.error) {
 			const { status_code, message } = error.response.data.error
-			throw { statusCode: status_code, body: message }
+			throw createError(status_code, message)
 		} else {
 			console.log('Unexpected error:', error)
 			return {

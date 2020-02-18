@@ -1,20 +1,16 @@
 require('dotenv').config()
-const middy = require('middy')
-const { jsonBodyParser } = require('middy/middlewares')
-const { preflight } = require('@ziro/middleware')
-const { allowedOrigin } = require('@ziro/middleware')
-const { auth } = require('@ziro/middleware')
-const { errorHandler } = require('@ziro/middleware')
-const { cors } = require('@ziro/middleware')
-const allowed = 'https://ziro.app'
+const middy = require('@middy/core')
+const { basicAuth } = require('@ziro/middleware')
+const httpJsonBodyParser = require('@middy/http-json-body-parser')
+const httpErrorHandler = require('@middy/http-error-handler')
+const createError = require('http-errors')
+const cors = require('@middy/http-cors')
 
 const main = handler =>
 	middy(handler)
-	.use(preflight)
-	.use(allowedOrigin(allowed))
-	.use(auth)
+	.use(basicAuth)
 	.use(jsonBodyParser())
-	.use(errorHandler)
+	.use(httpErrorHandler)
 	.use(cors)
 
 module.exports = main

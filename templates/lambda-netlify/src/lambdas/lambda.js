@@ -7,4 +7,4 @@ const lambda = async event => {
 	return request()
 }
 
-module.exports = { main(lambda) }
+module.exports = { handler: main(lambda) }

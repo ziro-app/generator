@@ -29,5 +29,5 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.40",
     "ava": "^3.3.0"
-  },
+  }
 }

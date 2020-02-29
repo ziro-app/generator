@@ -29,8 +29,9 @@ const Router = ({ isLogged }) => {
 		'/trocar-senha': <UpdatePass />,
 		'/deletar-conta': <DeleteAccount />
 	}
-	const homeRoute = '/conta'
-	return routeMatcher(isLogged, publicRoutes, privateRoutes, homeRoute, <NotFound fallback='/' />)
+	const publicHomeRoute = '/login'
+	const privateHomeRoute = '/'
+	return routeMatcher(isLogged, publicRoutes, privateRoutes, publicHomeRoute, privateHomeRoute, <NotFound fallback='/' />)
 }
 
 Router.propTypes = {

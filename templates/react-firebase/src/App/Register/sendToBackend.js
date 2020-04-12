@@ -11,7 +11,7 @@ const sendToBackend = state => () => {
 	const body = {
 		apiResource: 'values',
 		apiMethod: 'append',
-		spreadsheetId: process.env.SHEET_ID_REGISTER_APPEND,
+		spreadsheetId: process.env.SHEET_ID,
 		range: 'Afiliados!A1',
 		resource: {
 			values: [

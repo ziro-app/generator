@@ -7,7 +7,9 @@ const sendToBackend = state => () => new Promise(async (resolve, reject) => {
 		const credential = fbauth.EmailAuthProvider.credential(user.email, pass)
 		await user.reauthenticateWithCredential(credential)
 		try {
+			// add collection name to db.collection('')
 			const snapCollection = await db.collection('').where('uid','==',user.uid).get()
+			//
 			let docRefCollection
 			snapCollection.forEach(doc => docRefCollection = doc.ref)
 			const snapUser = await db.collection('users').where('email','==',user.email).get()

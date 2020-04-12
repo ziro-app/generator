@@ -19,11 +19,11 @@ export const Menu = ({ title, children }) => {
 					username={name || 'Usuário'}
 					userdata={''}
 					options={[
-						{ path: '/conta',
+						{ path: '/login',
 						  onClick: () => setIsOpen(false),
 						  icon: <Icon type='gear' size={15} strokeWidth={2} />,
 						  text: 'Minha Conta' },
-						{ path: '#',
+						{ path: '/login',
 						  onClick: () => auth.signOut(),
 						  icon: <Icon type='logout' size={15} strokeWidth={3} />,
 						  text: 'Sair' },

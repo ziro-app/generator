@@ -269,8 +269,8 @@ const plopFileContent = `module.exports = plop => {
 			},
 			{
 				type: 'add',
-				path: 'src/lambdas/myLambdaFunction.js',
-				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/src/lambdas/myLambdaFunction.js'
+				path: 'src/lambdas/myLambda.js',
+				templateFile: 'node_modules/@ziro/generator/templates/lambda-netlify/src/lambdas/myLambda.js'
 			}
 		]
 	})

@@ -1,12 +1,12 @@
 const lambda = require('../templates/lambda')
 const request = require('../templates/request')
 
-// Mudar o nome 'myLambda' para o nome da sua funcao e também alterar o nome do arquivo
+// Mudar o nome 'myLambdaFunction' para o nome da sua funcao
 
-const myLambda = event => {
+const myLambdaFunction = event => {
 	return request()
 }
 
 //export
-const handler = lambda(myLambda)
+const handler = lambda(myLambdaFunction)
 module.exports = { handler }

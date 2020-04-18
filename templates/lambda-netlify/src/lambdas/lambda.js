@@ -1,10 +1,12 @@
-const main = require('../templates/main')
+const lambda = require('../templates/lambda')
 const request = require('../templates/request')
 
-// Mudar o nome lambda para o nome da sua funcao
+// Mudar o nome 'myLambdaFunction' para o nome da sua funcao
 
-const lambda = async event => {
+const myLambdaFunction = event => {
 	return request()
 }
 
-module.exports = { handler: main(lambda) }
+//export
+const handler = lambda(myLambdaFunction)
+module.exports = { handler }
